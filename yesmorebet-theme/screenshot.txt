@@ -1,0 +1,32 @@
+SCREENSHOT.PNG - Instructions
+
+Pour créer le screenshot du thème WordPress YesMoreBet :
+
+1. Dimensions : 1200 x 900 pixels (ratio 4:3)
+
+2. Contenu suggéré :
+   - Capture d'écran de la page d'accueil du site
+   - Montrant la section Hero avec le logo YesMoreBet
+   - Fond noir avec le dégradé or (#FDC700 vers #D08700)
+   - Texte visible : "YesMoreBet" en grand
+   - Sous-titre visible
+   - Au moins un bouton CTA
+
+3. Outils pour créer :
+   - Prendre une capture d'écran de la page d'accueil une fois le site en ligne
+   - Ou créer une mockup avec Photoshop/Figma
+   - Ou utiliser un outil de capture comme Firefox/Chrome DevTools
+
+4. Format : PNG obligatoire
+   - Nom : screenshot.png
+   - Emplacement : racine du thème (yesmorebet-theme/screenshot.png)
+
+5. Alternative simple :
+   - Créer une image avec fond noir
+   - Ajouter le texte "YesMoreBet" en or
+   - Ajouter "Animation Casino Fictif - Côte d'Azur"
+   - Logo si disponible
+
+Le screenshot est affiché dans :
+- Apparence > Thèmes (tableau de bord WordPress)
+- Aperçu du thème avant activation
