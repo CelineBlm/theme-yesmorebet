@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Galerie
- * Description: Template pour la page galerie
+ * Description: Template pour la page galerie - Éditable avec Elementor
  *
  * @package YesMoreBet
  */
@@ -13,22 +13,7 @@ get_header();
     <?php
     while (have_posts()) :
         the_post();
-        ?>
-        <div class="container">
-            <div style="padding: 3rem 1rem;">
-                <div class="text-center mb-12">
-                    <h1 class="text-gradient" style="font-size: 3rem; margin-bottom: 1.5rem;">
-                        <?php the_title(); ?>
-                    </h1>
-                    <p class="section-description">
-                        Découvrez l'ambiance YesMoreBet en images
-                    </p>
-                </div>
-
-                <?php the_content(); ?>
-            </div>
-        </div>
-        <?php
+        the_content();
     endwhile;
     ?>
 </main>

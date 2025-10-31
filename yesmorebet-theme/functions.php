@@ -244,3 +244,40 @@ function yesmorebet_handle_contact_form() {
 }
 add_action('wp_ajax_yesmorebet_contact', 'yesmorebet_handle_contact_form');
 add_action('wp_ajax_nopriv_yesmorebet_contact', 'yesmorebet_handle_contact_form');
+
+/**
+ * Enhanced Elementor Support
+ */
+// Ensure Elementor can edit all pages
+function yesmorebet_enable_elementor_for_pages() {
+    add_post_type_support('page', 'elementor');
+}
+add_action('init', 'yesmorebet_enable_elementor_for_pages');
+
+// Don't load theme CSS on Elementor Canvas pages
+function yesmorebet_dequeue_on_canvas($post_id) {
+    if (\Elementor\Plugin::$instance->preview->is_preview_mode()) {
+        return;
+    }
+    
+    $page_settings_manager = \Elementor\Core\Settings\Manager::get_settings_managers('page');
+    $page_settings_model = $page_settings_manager->get_model($post_id);
+    $template = $page_settings_model->get_settings('template');
+    
+    if ($template === 'elementor_canvas') {
+        // Remove theme styles for canvas
+        remove_action('wp_enqueue_scripts', 'yesmorebet_scripts');
+    }
+}
+
+// Elementor compatibility for full width
+function yesmorebet_elementor_width_support() {
+    add_theme_support('elementor', [
+        'default_generic_fonts' => 'Quicksand',
+        'settings' => [
+            'container_width' => 1200,
+            'space_between_widgets' => 20,
+        ],
+    ]);
+}
+add_action('after_setup_theme', 'yesmorebet_elementor_width_support');

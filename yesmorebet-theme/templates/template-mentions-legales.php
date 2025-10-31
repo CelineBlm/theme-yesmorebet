@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Mentions Légales
- * Description: Template pour les mentions légales
+ * Description: Template pour les mentions légales - Éditable avec Elementor
  *
  * @package YesMoreBet
  */
@@ -13,19 +13,7 @@ get_header();
     <?php
     while (have_posts()) :
         the_post();
-        ?>
-        <div class="container">
-            <div style="max-width: 56rem; margin: 0 auto; padding: 3rem 1rem;">
-                <h1 class="text-gradient" style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">
-                    <?php the_title(); ?>
-                </h1>
-
-                <div style="color: #d1d5db; line-height: 1.75;">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>
-        <?php
+        the_content();
     endwhile;
     ?>
 </main>

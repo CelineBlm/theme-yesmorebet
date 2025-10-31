@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Page d'Accueil
- * Description: Template pour la page d'accueil avec sections Hero, Features et Concept
+ * Description: Template pour la page d'accueil - Éditable avec Elementor
  *
  * @package YesMoreBet
  */
