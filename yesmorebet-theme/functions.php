@@ -281,3 +281,15 @@ function yesmorebet_elementor_width_support() {
     ]);
 }
 add_action('after_setup_theme', 'yesmorebet_elementor_width_support');
+
+/**
+ * Helper function to get page URL by slug
+ */
+function yesmorebet_get_page_url($slug) {
+    $page = get_page_by_path($slug);
+    if ($page) {
+        return get_permalink($page->ID);
+    }
+    // Fallback to home URL with slug
+    return home_url('/' . $slug);
+}

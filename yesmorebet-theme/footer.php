@@ -41,17 +41,17 @@
                         <h3><?php esc_html_e('Informations légales', 'yesmorebet'); ?></h3>
                         <ul>
                             <li>
-                                <a href="<?php echo esc_url(home_url('/mentions-legales')); ?>">
+                                <a href="<?php echo esc_url(yesmorebet_get_page_url('mentions-legales')); ?>">
                                     <?php esc_html_e('Mentions légales', 'yesmorebet'); ?>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo esc_url(home_url('/politique-confidentialite')); ?>">
+                                <a href="<?php echo esc_url(yesmorebet_get_page_url('politique-confidentialite')); ?>">
                                     <?php esc_html_e('Politique de confidentialité', 'yesmorebet'); ?>
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo esc_url(home_url('/cgv')); ?>">
+                                <a href="<?php echo esc_url(yesmorebet_get_page_url('cgv')); ?>">
                                     <?php esc_html_e('CGV', 'yesmorebet'); ?>
                                 </a>
                             </li>
