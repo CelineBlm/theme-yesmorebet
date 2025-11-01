@@ -1,6 +1,6 @@
 <?php
 /**
- * Hero Section Elementor Widget
+ * Hero Section Elementor Widget - Full Width
  *
  * @package YesMoreBet
  */
@@ -124,57 +124,83 @@ class YesMoreBet_Hero_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         ?>
-        <section id="accueil" class="hero-section">
-            <!-- Background Image with Overlay -->
-            <div class="hero-background">
-                <img
-                    src="<?php echo esc_url($settings['background_image']['url']); ?>"
-                    alt="<?php echo esc_attr($settings['title']); ?>"
-                />
-                <div class="hero-overlay"></div>
-            </div>
+        <div class="ymb-hero-wrapper">
+            <section id="accueil" class="hero-section">
+                <!-- Background Image with Overlay -->
+                <div class="hero-background">
+                    <img
+                        src="<?php echo esc_url($settings['background_image']['url']); ?>"
+                        alt="<?php echo esc_attr($settings['title']); ?>"
+                    />
+                    <div class="hero-overlay"></div>
+                </div>
 
-            <!-- Content -->
-            <div class="hero-content container">
-                <div style="max-width: 64rem; margin: 0 auto; text-align: center;">
-                    <!-- Main Heading -->
-                    <h1 class="hero-title">
-                        <?php echo esc_html($settings['title']); ?>
-                    </h1>
+                <!-- Content -->
+                <div class="hero-content">
+                    <div class="hero-content-inner">
+                        <!-- Main Heading -->
+                        <h1 class="hero-title">
+                            <?php echo esc_html($settings['title']); ?>
+                        </h1>
 
-                    <!-- Subtitle -->
-                    <h2 class="hero-subtitle">
-                        <?php echo esc_html($settings['subtitle']); ?>
-                    </h2>
+                        <!-- Subtitle -->
+                        <h2 class="hero-subtitle">
+                            <?php echo esc_html($settings['subtitle']); ?>
+                        </h2>
 
-                    <!-- Location -->
-                    <div class="hero-location">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <!-- Location -->
+                        <div class="hero-location">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span><?php echo esc_html($settings['location']); ?></span>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="hero-cta">
+                            <a href="<?php echo esc_url($settings['cta_primary_link']['url']); ?>" class="btn-primary">
+                                <?php echo esc_html($settings['cta_primary_text']); ?>
+                            </a>
+                            <a href="<?php echo esc_url($settings['cta_secondary_link']['url']); ?>" class="btn-secondary">
+                                <?php echo esc_html($settings['cta_secondary_text']); ?>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Scroll Indicator -->
+                    <div class="scroll-indicator">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                         </svg>
-                        <span><?php echo esc_html($settings['location']); ?></span>
-                    </div>
-
-                    <!-- CTA Buttons -->
-                    <div class="hero-cta">
-                        <a href="<?php echo esc_url($settings['cta_primary_link']['url']); ?>" class="btn-primary">
-                            <?php echo esc_html($settings['cta_primary_text']); ?>
-                        </a>
-                        <a href="<?php echo esc_url($settings['cta_secondary_link']['url']); ?>" class="btn-secondary">
-                            <?php echo esc_html($settings['cta_secondary_text']); ?>
-                        </a>
                     </div>
                 </div>
-
-                <!-- Scroll Indicator -->
-                <div class="scroll-indicator">
-                    <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
+        
+        <style>
+        /* Force full width for Hero Section */
+        .ymb-hero-wrapper {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        
+        .ymb-hero-wrapper .hero-section {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-content-inner {
+            max-width: 64rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+        </style>
         <?php
     }
 }

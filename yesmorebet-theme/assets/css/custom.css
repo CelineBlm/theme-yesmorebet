@@ -730,3 +730,33 @@
         display: none !important;
     }
 }
+
+/* Hero Section - Full Width Override */
+.elementor-widget-yesmorebet_hero {
+    width: 100vw !important;
+    position: relative;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    max-width: none !important;
+}
+
+.elementor-widget-yesmorebet_hero .elementor-widget-container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ymb-hero-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-content-inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
